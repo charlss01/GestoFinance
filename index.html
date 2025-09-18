@@ -1,91 +1,46 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-   <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GestoFinance</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Welcome to GestoFinance</h1>
-  <div id="chatbot">
-    <div id="chat-header">AI Assistant</div>
-    <div id="chat-window"></div>
-    <div id="chat-input-area">
-      <input type="text" id="user-input" placeholder="Type a message...">
-      <button id="send-btn">Send</button>
-    </div>
-  </div>
+  <header>
+    <h1>Welcome to GestoFinance</h1>
+    <p>Manage your personal finances with ease.</p>
+  </header>
 
-  <script src="script.js"></script>
+  <main>
+    <section>
+      <h2>About</h2>
+      <p>GestoFinance is a simple tool to help you track and plan your financial goals.</p>
+    </section>
 
-    <!-- Ingresos y gastos -->
-    <div class="card">
-      <h2>Ingresos y Gastos</h2>
-      <input type="number" id="ingresos" placeholder="Ingresos mensuales ($)">
-      <input type="number" id="gastos" placeholder="Gastos mensuales ($)">
-    </div>
+    <section>
+      <h2>Features</h2>
+      <ul>
+        <li>Expense tracking</li>
+        <li>Budget planning</li>
+        <li>Financial insights</li>
+      </ul>
+    </section>
+  </main>
 
-    <!-- Objetivos -->
-    <div class="card">
-      <h2>Objetivo Financiero</h2>
-      <input type="text" id="objetivo" placeholder="Ejemplo: Viaje, Deuda, Inversión">
-      <input type="number" id="meta" placeholder="Meta en $">
-      <button onclick="calcularPlan()">Generar Plan</button>
-      <div id="resultado" class="result" style="display:none;"></div>
-    </div>
-
-    <!-- Gráfica de Progreso -->
-    <div class="card">
-      <h2>Progreso hacia la meta</h2>
-      <canvas id="graficaProgreso"></canvas>
-    </div>
-
-    <!-- Presupuestos -->
-    <div class="card">
-      <h2>Presupuestos</h2>
-      <label>Alimentación</label>
-      <div class="progress-bar"><div class="progress" id="progAlimentacion" style="width:70%">70%</div></div>
-      <label>Transporte</label>
-      <div class="progress-bar"><div class="progress" id="progTransporte" style="width:40%">40%</div></div>
-      <label>Entretenimiento</label>
-      <div class="progress-bar"><div class="progress" id="progOcio" style="width:90%; background:#062581;">90%</div></div>
-    </div>
-
-    <!-- Flujo de efectivo -->
-    <div class="card">
-      <h2>Flujo de Efectivo</h2>
-      <canvas id="graficaFlujo"></canvas>
-    </div>
-
-    <!-- Categorías dinámicas -->
-    <div class="card">
-      <h2>Categorías de Gastos</h2>
-      <input type="text" id="categoriaNombre" placeholder="Nombre de categoría">
-      <input type="number" id="categoriaMonto" placeholder="Monto ($)">
-      <button onclick="agregarCategoria()">Agregar Categoría</button>
-      <ul id="listaCategorias"></ul>
-    </div>
-
-    <!-- Gráficas de categorías -->
-    <div class="card">
-      <h2>Distribución de Gastos</h2>
-      <canvas id="graficaCategoriasPie"></canvas>
-    </div>
-    <div class="card">
-      <h2>Comparación de Gastos</h2>
-      <canvas id="graficaCategoriasBar"></canvas>
-    </div>
-
-    <!-- Tips -->
-    <div class="card" id="tipFinanciero">
-      💡 Tip financiero: Ahorra al menos el 20% de tus ingresos.
+  <!-- Floating Chatbot -->
+  <div id="chatbot-container">
+    <div id="chatbot-header">💬 AI Assistant</div>
+    <div id="chatbot" class="hidden">
+      <div id="chat-window"></div>
+      <div id="chat-input-area">
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button id="send-btn">Send</button>
+      </div>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
