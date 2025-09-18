@@ -1,6 +1,6 @@
 // script.js
 const API_URL = "https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill";
-const API_TOKEN = "YOUR_HF_API_KEY"; // Replace with Hugging Face token
+const API_TOKEN = "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"; // replace with real token
 
 const chatWindow = document.getElementById("chat-window");
 const userInput = document.getElementById("user-input");
@@ -15,19 +15,24 @@ function addMessage(text, sender) {
 }
 
 async function queryHuggingFace(message) {
-  const response = await fetch(API_URL, {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${API_TOKEN}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ inputs: message }),
-  });
-  const result = await response.json();
-  return result.generated_text || "Sorry, I couldn't process that.";
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${API_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ inputs: message }),
+    });
+
+    const result = await response.json();
+    return result.generated_text || "⚠️ AI did not return a response.";
+  } catch (err) {
+    return "⚠️ Error connecting to AI service.";
+  }
 }
 
-sendBtn.addEventListener("click", async () => {
+async function handleSend() {
   const message = userInput.value.trim();
   if (!message) return;
 
@@ -36,10 +41,11 @@ sendBtn.addEventListener("click", async () => {
 
   const botReply = await queryHuggingFace(message);
   addMessage(botReply, "bot");
-});
+}
 
+sendBtn.addEventListener("click", handleSend);
 userInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") sendBtn.click();
+  if (e.key === "Enter") handleSend();
 });
 
 let grafica;
@@ -164,4 +170,5 @@ function actualizarGraficas() {
     }
   });
 }
+
 
