@@ -1,9 +1,69 @@
 /* styles.css */
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5f7fa;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
   color: #333;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+h1 {
+  text-align: center;
+  color: #b318a3;
+  grid-column: 1 / -1;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+}
+h2 {
+  margin-bottom: 10px;
+  color: #444;
+}
+input, button, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+button {
+  background: #b318a3;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover {
+  background: #b318a3;
+}
+.result {
+  margin-top: 15px;
+  padding: 15px;
+  background: #e6f4ea;
+  border-radius: 8px;
+}
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+  margin: 10px 0;
+}
+.progress {
+  height: 100%;
+  background: #b318a3;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 header {
@@ -17,9 +77,6 @@ main {
   padding: 2rem;
 }
 
-h1, h2 {
-  margin: 0.5rem 0;
-}
 
 /* Chatbot container */
 #chatbot-container {
@@ -102,4 +159,5 @@ h1, h2 {
   border: none;
   cursor: pointer;
 }
+
 
