@@ -144,4 +144,6 @@ button:hover {
   color: #fff;
   border: none;
   cursor: pointer;
+  width:min-content;
 }
+
