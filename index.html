@@ -28,6 +28,73 @@
       </ul>
     </section>
   </main>
+  <div class="container">
+    <h1>💼 Gestor Financiero Personal</h1>
+
+    <!-- Ingresos y gastos -->
+    <div class="card">
+      <h2>Ingresos y Gastos</h2>
+      <input type="number" id="ingresos" placeholder="Ingresos mensuales ($)">
+      <input type="number" id="gastos" placeholder="Gastos mensuales ($)">
+    </div>
+
+    <!-- Objetivos -->
+    <div class="card">
+      <h2>Objetivo Financiero</h2>
+      <input type="text" id="objetivo" placeholder="Ejemplo: Viaje, Deuda, Inversión">
+      <input type="number" id="meta" placeholder="Meta en $">
+      <button onclick="calcularPlan()">Generar Plan</button>
+      <div id="resultado" class="result" style="display:none;"></div>
+    </div>
+
+    <!-- Gráfica de Progreso -->
+    <div class="card">
+      <h2>Progreso hacia la meta</h2>
+      <canvas id="graficaProgreso"></canvas>
+    </div>
+
+    <!-- Presupuestos -->
+    <div class="card">
+      <h2>Presupuestos</h2>
+      <label>Alimentación</label>
+      <div class="progress-bar"><div class="progress" id="progAlimentacion" style="width:70%">70%</div></div>
+      <label>Transporte</label>
+      <div class="progress-bar"><div class="progress" id="progTransporte" style="width:40%">40%</div></div>
+      <label>Entretenimiento</label>
+      <div class="progress-bar"><div class="progress" id="progOcio" style="width:90%; background:#062581;">90%</div></div>
+    </div>
+
+    <!-- Flujo de efectivo -->
+    <div class="card">
+      <h2>Flujo de Efectivo</h2>
+      <canvas id="graficaFlujo"></canvas>
+    </div>
+
+    <!-- Categorías dinámicas -->
+    <div class="card">
+      <h2>Categorías de Gastos</h2>
+      <input type="text" id="categoriaNombre" placeholder="Nombre de categoría">
+      <input type="number" id="categoriaMonto" placeholder="Monto ($)">
+      <button onclick="agregarCategoria()">Agregar Categoría</button>
+      <ul id="listaCategorias"></ul>
+    </div>
+
+    <!-- Gráficas de categorías -->
+    <div class="card">
+      <h2>Distribución de Gastos</h2>
+      <canvas id="graficaCategoriasPie"></canvas>
+    </div>
+    <div class="card">
+      <h2>Comparación de Gastos</h2>
+      <canvas id="graficaCategoriasBar"></canvas>
+    </div>
+
+    <!-- Tips -->
+    <div class="card" id="tipFinanciero">
+      💡 Tip financiero: Ahorra al menos el 20% de tus ingresos.
+    </div>
+  </div>
+
 
   <!-- Floating Chatbot -->
   <div id="chatbot-container">
@@ -44,3 +111,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
